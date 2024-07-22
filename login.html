@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+<style>
+	body {
+    --inherit: inherit;
+    --current: currentColor;
+    --transparent: transparent;
+    --black: #0f0f0f;
+    --white: #fff;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --gray-950: #030712;
+    --zinc-50: #fafafa;
+    --zinc-100: #f4f4f5;
+    --zinc-200: #e4e4e7;
+    --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-700: #3f3f46;
+    --zinc-800: #27272a;
+    --zinc-900: #18181b;
+    --zinc-950: #09090b;
+    --neutral-2: #f3f4f6;
+    --neutral-4: #b4b6bb;
+    --neutral-5: #777c85;
+    --neutral-7: #363a45;
+    --neutral-8: #2b2f37;
+    --neutral-9: #202329;
+    --neutral-10: #16171c;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+    --neutral-950: #0a0a0a;
+    --stone-50: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-300: #d6d3d1;
+    --stone-400: #a8a29e;
+    --stone-500: #78716c;
+    --stone-600: #57534e;
+    --stone-700: #44403c;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --stone-950: #0c0a09;
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+    --red-950: #450a0a;
+    --orange: #e74c3c;
+    --amber-50: #fffbeb;
+    --amber-100: #fef3c7;
+    --amber-200: #fde68a;
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --amber-700: #b45309;
+    --amber-800: #92400e;
+    --amber-900: #78350f;
+    --amber-950: #451a03;
+    --yellow: #f1c40f;
+    --lime-50: #f7fee7;
+    --lime-100: #ecfccb;
+    --lime-200: #d9f99d;
+    --lime-300: #bef264;
+    --lime-400: #a3e635;
+    --lime-500: #84cc16;
+    --lime-600: #65a30d;
+    --lime-700: #4d7c0f;
+    --lime-800: #3f6212;
+    --lime-900: #365314;
+    --lime-950: #1a2e05;
+    --green: #07bc0c;
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --emerald-300: #6ee7b7;
+    --emerald-400: #34d399;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --emerald-800: #065f46;
+    --emerald-900: #064e3b;
+    --emerald-950: #022c22;
+    --teal-50: #f0fdfa;
+    --teal-100: #ccfbf1;
+    --teal-200: #99f6e4;
+    --teal-300: #5eead4;
+    --teal-400: #2dd4bf;
+    --teal-500: #14b8a6;
+    --teal-600: #0d9488;
+    --teal-700: #0f766e;
+    --teal-800: #115e59;
+    --teal-900: #134e4a;
+    --teal-950: #042f2e;
+    --cyan-50: #ecfeff;
+    --cyan-100: #cffafe;
+    --cyan-200: #a5f3fc;
+    --cyan-300: #67e8f9;
+    --cyan-400: #22d3ee;
+    --cyan-500: #06b6d4;
+    --cyan-600: #0891b2;
+    --cyan-700: #0e7490;
+    --cyan-800: #155e75;
+    --cyan-900: #164e63;
+    --cyan-950: #083344;
+    --sky-50: #f0f9ff;
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --sky-300: #7dd3fc;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
+    --sky-600: #0284c7;
+    --sky-700: #0369a1;
+    --sky-800: #075985;
+    --sky-900: #0c4a6e;
+    --sky-950: #082f49;
+    --blue: #4f46e5;
+    --indigo-50: #f1f6fc;
+    --indigo-100: #e5eefa;
+    --indigo-200: #d0dff5;
+    --indigo-300: #b4c9ed;
+    --indigo-400: #95abe4;
+    --indigo-500: #7b8fd9;
+    --indigo-600: #6674cc;
+    --indigo-700: #515db1;
+    --indigo-800: #434d90;
+    --indigo-900: #3c4573;
+    --indigo-950: #232743;
+    --violet: #a855f7;
+    --purple: #5856d6;
+    --fuchsia: #ec4899;
+    --pink-50: #fdf2f8;
+    --pink-100: #fce7f3;
+    --pink-200: #fbcfe8;
+    --pink-300: #f9a8d4;
+    --pink-400: #f472b6;
+    --pink-500: #ec4899;
+    --pink-600: #db2777;
+    --pink-700: #be185d;
+    --pink-800: #9d174d;
+    --pink-900: #831843;
+    --pink-950: #500724;
+    --rose-50: #fff1f2;
+    --rose-100: #ffe4e6;
+    --rose-200: #fecdd3;
+    --rose-300: #fda4af;
+    --rose-400: #fb7185;
+    --rose-500: #f43f5e;
+    --rose-600: #e11d48;
+    --rose-700: #be123c;
+    --rose-800: #9f1239;
+    --rose-900: #881337;
+    --rose-950: #4c0519;
+    --lightGray: #e5e7eb;
+    --mediumGray: #9ca3af;
+    --darkGray: #1f2937;
+    --charcoal: #262626;
+    --brightgray500: #7c7c7c;
+    --brightgray400: #989898;
+    --brightgray600: #656565;
+    --brightgray50: #fcfcfc;
+    --brightgray100: #f7f7f7;
+    --brightgray200: #dbdbdb;
+    --brightgray300: #bdbdbd;
+    --brightgray950: #292929;
+    --sorbus50: #fff9ec;
+    --sorbus200: #ffe3a5;
+    --Brand_Blue: #334155;
+    --royalBlue50: #eff2ff;
+    --royalBlue100: #dbe1fe;
+    --royalBlue500: #3851f9;
+    --lightBlue: #3b82f6;
+    --skyBlue: #3498db;
+    --sorbus500: #ff900a;
+    --Brand_Red: #f0402c;
+    --lightRed: #ff2d55;
+    --ElectricalViolet500: #a943ff;
+    --ElectricalViolet600: #9013fe;
+    --Electricviolet100: #f3e5ff;
+    --Electricviolet50: #faf4ff;
+    --limeGreen: #4cd964;
+    --darkViolet: #9333ea;
+    --lightPurple: #bb86fc;
+    --turquoise: #0d9488;
+    --deepBlue: #0284c7;
+    --babyBlue: #60a5fa;
+    --brand: #6674cc;
+    --richBlack-50: #c5c7d4;
+    --shark-50: #f5f6f6;
+    --shark-100: #e5e7e8;
+    --shark-200: #cdd0d4;
+    --shark-300: #abafb5;
+    --shark-400: #81868f;
+    --shark-500: #666b74;
+    --shark-600: #575b63;
+    --shark-700: #4a4d54;
+    --shark-800: #424448;
+    --shark-900: #3a3c3f;
+    --shark-950: #222326;
+    --mandy-50: #fff1f3;
+    --mandy-100: #fee5e9;
+    --mandy-200: #fdced7;
+    --mandy-300: #faa7b7;
+    --mandy-400: #f77591;
+    --mandy-500: #ef476f;
+    --mandy-600: #db2357;
+    --mandy-700: #b9174a;
+    --mandy-800: #9b1644;
+    --mandy-900: #85163f;
+    --mandy-950: #4a071e;
+    --pictonBlue-50: #f0f9ff;
+    --pictonBlue-100: #e0f1fe;
+    --pictonBlue-200: #bbe4fc;
+    --pictonBlue-300: #7ed0fb;
+    --pictonBlue-400: #32b5f6;
+    --pictonBlue-500: #109fe7;
+    --pictonBlue-600: #047ec5;
+    --pictonBlue-700: #0465a0;
+    --pictonBlue-800: #085684;
+    --pictonBlue-900: #0d486d;
+    --pictonBlue-950: #092d48;
+    --chileanFire-50: #fff9ed;
+    --chileanFire-100: #fff2d5;
+    --chileanFire-200: #ffe2a9;
+    --chileanFire-300: #fecb73;
+    --chileanFire-400: #fdab3a;
+    --chileanFire-500: #fb9014;
+    --chileanFire-600: #f5780a;
+    --chileanFire-700: #c4570a;
+    --chileanFire-800: #9b4411;
+    --chileanFire-900: #7d3a11;
+    --chileanFire-950: #441c06;
+    --pastelGreen-50: #f0fdf4;
+    --pastelGreen-100: #dcfce7;
+    --pastelGreen-200: #bbf7cf;
+    --pastelGreen-300: #87eeaa;
+    --pastelGreen-400: #4fde81;
+    --pastelGreen-500: #23c45c;
+    --pastelGreen-600: #17a248;
+    --pastelGreen-700: #167f3b;
+    --pastelGreen-800: #166533;
+    --pastelGreen-900: #14532c;
+    --pastelGreen-950: #052e15;
+    --fontFamily-Hellix-0: Hellix;
+    --fontFamily-Hellix-1: sans;
+    --border: hsl(var(--border));
+    --input: hsl(var(--input));
+    --ring: hsl(var(--ring));
+    --background: hsl(var(--background));
+    --foreground: hsl(var(--foreground));
+    --primary: hsl(var(--primary));
+    --primary-foreground: hsl(var(--primary-foreground));
+    --secondary: hsl(var(--secondary));
+    --secondary-foreground: hsl(var(--secondary-foreground));
+    --destructive: hsl(var(--destructive));
+    --destructive-foreground: hsl(var(--destructive-foreground));
+    --muted: hsl(var(--muted));
+    --muted-foreground: hsl(var(--muted-foreground));
+    --accent: hsl(var(--accent));
+    --accent-foreground: hsl(var(--accent-foreground));
+    --popover: hsl(var(--popover));
+    --popover-foreground: hsl(var(--popover-foreground));
+    --card: hsl(var(--card));
+    --card-foreground: hsl(var(--card-foreground));
+  /* background : linear-gradient(to right,  var(--brightgray300), var(--neutral-600), var(--neutral-700), var(--slate-800));  */
+   background:  linear-gradient(to right, var(--ElectricalViolet600), var(--pink-300),var(--pink-500), var(--pink-600),var(--indigo-600),var(--pink-700),var(--pink-800),var(--gray-900)); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: __Inter_aaf875, __Inter_Fallback_aaf875;
+
+  color: #333333;
+}
+
+.box-form {
+  margin: 0 auto;
+  width: 60%;
+
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: center;
+   /* box-shadow: 0 0 20px 6px #090b6f85;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+      inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1); */
+
+    
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+      inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    border: 1px solid rgba(165, 93, 7, 0.6);
+    color: rgba(120, 50, 5, 0.8); 
+   transform: rotate3d(1, 1, 0, 0deg);
+
+   
+
+}
+@media (max-width: 980px) {
+  .box-form {
+    flex-flow: wrap;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+.box-form div {
+  height: auto;
+}
+.box-form .left {
+  width: 50%;
+  color: #150303;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://img.freepik.com/free-vector/hexagonal-medical-style-background_1017-19369.jpg?w=900&t=st=1680863274~exp=1680863874~hmac=893472bbcae805387873f9e0f0111c8f54543adf37f3ad13d1dd6bd896cbb919);
+  overflow: hidden;
+
+}
+.box-form .left .overlay {
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.box-form .left .overlay h1 {
+  font-size: 10vmax;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.image{
+  padding: 20px;
+  align:center;
+}
+.btn
+{
+  width: 250px;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background-color: #3c48b0; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.box-form .left .overlay span p {
+  margin-top: 30px;
+  font-weight: 900;
+}
+.box-form .left .overlay span a {
+  background: #3b5998;
+  color: #FFFFFF;
+  margin-top: 10px;
+  padding: 14px 50px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+}
+.box-form .left .overlay span a:last-child {
+  background: #1dcaff;
+  margin-left: 30px;
+}
+.box-form .right {
+  padding: 40px;
+  overflow: hidden;
+}
+@media (max-width: 980px) {
+  .box-form .right {
+    width: 100%;
+  }
+}
+.box-form .right h5 {
+  font-size: 6vmax;
+  line-height: 0;
+}
+.box-form .right p {
+  font-size: 14px;
+  color: #B0B3B9;
+}
+.box-form .right .inputs {
+  overflow: hidden;
+}
+.box-form .right input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 25px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #B0B3B9;
+}
+.box-form .right .remember-me--forget-password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-form .right .remember-me--forget-password input {
+  margin: 0;
+  margin-right: 7px;
+  width: auto;
+}
+.box-form .right button {
+  float: right;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #49c628a6;
+  background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+}
+
+label {
+  display: block;
+  position: relative;
+  margin-left: 30px;
+}
+
+label::before {
+  content: ' \f00c';
+  position: absolute;
+  font-family: FontAwesome;
+  background: transparent;
+  border: 3px solid #70F570;
+  border-radius: 4px;
+  color: transparent;
+  left: -30px;
+  transition: all 0.2s linear;
+}
+
+label:hover::before {
+  font-family: FontAwesome;
+  content: ' \f00c';
+  color: #fff;
+  cursor: pointer;
+  background: #70F570;
+}
+
+label:hover::before .text-checkbox {
+  background: #70F570;
+}
+
+label span.text-checkbox {
+  display: inline-block;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+label input[type="checkbox"] {
+  display: none;
+}
+ .btn a{
+        color: white;
+        text-decoration: none;
+        margin:auto;
+     }
+     .btn a:hover{
+       color: black;
+     }
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<center>
+		<h4 style="font-size: 34px; text-shadow: 2px 2px 4px #000000;" ><b><i>Choose Account Type</i></b></h4>
+		</center>
+		<center>
+		<img src="images/user.jpeg" class="image"  width = "30%"  >
+		</center>
+		<center>
+		<button type="button" class="btn" onclick="msg2()"><a class="bottom" href="{{url_for('registeru')}}">Sign up as User</a></button>
+		</center>
+			<center>
+			<img src="images/images.png" class="image"  width = "30%"  >
+		</center>
+		<center>
+		<button type="button" class="btn" onclick="msg3()"><a class="bottom" href="{{url_for('registerp')}}">Sign up as Police</a></button>
+		</center>
+		<center>
+		<img src="images/doctor.jpg" class="image" width="35%"  >
+			</center>
+			<center>
+		<button type="button" class="btn" onclick="msg1()" style="color:white;"><a href="{{url_for('registerh')}}">Sign up as Doctor</a></button>
+		</center>
+		</div>
+	</div>
+
+      <form action="{{ url_for('login') }}" method="post" autocomplete="off">
+		<div class="right">
+			<div class="msg"><h3 align="center" style ="color:red;">{{ msg }}</h3></div>
+		<h5>Login</h5>
+		<h3>Kindly enter your Name and Password to login   </h3>
+		<div class="inputs">
+			<input type="text" placeholder="name"  id="username" name="username" autocomplete="off">
+			<br>
+			<input type="password" placeholder="password"  id="passowrd" name="password" >
+		</div>
+			<br><br>
+
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+
+		</div>
+
+			<br>
+            <center>
+			<button type="submit">Login</button>
+				</center>
+
+
+	</div>
+	  </form>
+
+</div>
+<!-- partial -->
+  <script>
+	function msg1()
+	{
+		alert("Hello Doctor! Please fill out the form to get started")
+	}
+	function msg2()
+	{
+		alert("Hello User! Please fill out the form to get started")
+	}
+		function msg3()
+	{
+		alert("Hello Police! Please fill out the form to get started")
+	}
+  </script>
+</body>
+</html>
